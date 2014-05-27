@@ -101,8 +101,8 @@ var ComponentDispatcher = function () {
 };
 
 
-// TESTS
-var Tests = {
+// EXAMPLES
+var Examples = {
         buildClassString: function (elem, newClass) {
             if (elem.hasAttribute('class')) {
                 return newClass + ' ' + elem.getAttribute('class');
