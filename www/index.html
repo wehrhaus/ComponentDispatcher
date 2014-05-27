@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component Dispatcher</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+    .addShadow {
+        -webkit-box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
+        box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Component Dispatcher</h1>
+
+        <hr>
+
+        <div data-component="Tests.addClass Tests.addShadow" data-component-options='{"class": "bg-success", "classNameTextSelector": ".currentClass"}' class="col-md-12">
+            <p>This example will trigger two calls:</p>
+            <ul>
+                <li>Tests.addClass()</li>
+                <li>Tests.addShadow()</li>
+            </ul>
+            <p>Original ClassName: col-md-12</p>
+            <p>New ClassName: <span class="currentClass">col-md-12</span></p>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

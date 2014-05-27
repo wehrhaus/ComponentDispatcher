@@ -1,0 +1,24 @@
+{
+    "name": "ComponentDispatcher",
+    "title": "Component Dispatcher",
+    "description": "Use the html data attribute `data-component` to call javascript functions.",
+    "version": "1.0.0",
+    "author": {
+        "name": [ "Justin Wehrman" ],
+        "email": [ "jwehrman.wehr.haus.gmail.com" ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wehrhaus/ComponentDispatcher.git"
+    },
+    "readmeFilename": "README.md",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "matchdep": "~0.1.2",
+        "grunt-contrib-jshint": "~0.5.4",
+        "grunt-contrib-watch": "~0.4.0"
+    },
+    "engines": {
+        "node": ">=0.11.0"
+    }
+}
