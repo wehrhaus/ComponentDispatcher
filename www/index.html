@@ -14,19 +14,29 @@
 
         <hr>
 
-        <div data-component="examples.addClass examples.addShadow" data-component-options='{"class": "bg-success", "classNameTextSelector": ".currentClass"}' class="col-md-12">
-            <p>This example will trigger two calls:</p>
+        <div data-component="examples.addClass examples.addShadow" data-component-options='{"class": "bg-success"}' class="col-md-12">
+            <p>This example will trigger two namespaced methods:</p>
             <ul>
                 <li>examples.addClass()</li>
                 <li>examples.addShadow()</li>
             </ul>
+            <p><em>Example methods can be found in <strong>examples.js</strong>.</em></p>
         </div>
 
-        <div data-component="examples.addShadow" class="col-md-12">
-            <p>This example will trigger:</p>
+        <div data-component="examples.addShadow" class="col-md-12 bg-info">
+            <p>This example will trigger a single namespaced method:</p>
             <ul>
                 <li>examples.addShadow()</li>
             </ul>
+            <p><em>Example methods can be found in <strong>examples.js</strong>.</em></p>
+        </div>
+
+        <div data-component="foo" class="col-md-12 bg-danger">
+            <p>This example triggers a simple function:</p>
+            <ul>
+                <li>foo()</li>foo
+            </ul>
+            <p><em>Example methods can be found in <strong>examples.js</strong>.</em></p>
         </div>
 
     </div>

@@ -33,8 +33,7 @@ var ComponentDispatcher = function () {
 
     /**
      * Send valid `data-component` attributes found in the DOM
-     * to stringAsFunction(@data-component, @window, [@data-component-options])
-     * if the component has not already been dispatched.
+     * to stringAsFunction(@data-component, @window, [@data-component-options]).
      * Include data-component-options as argument.
      */
     this.componentDispatch = function () {

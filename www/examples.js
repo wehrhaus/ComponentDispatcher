@@ -16,3 +16,9 @@ var examples = {
         elem.setAttribute('class', this.buildClassString(elem, 'addShadow'));
     }
 };
+
+var foo = function () {
+    var data = arguments[0];
+    examples.addShadow(data);
+    console.log(data.dataComponentCaller.getAttribute('class'));
+};
