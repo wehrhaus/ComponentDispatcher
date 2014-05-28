@@ -20,5 +20,4 @@ var examples = {
 var foo = function () {
     var data = arguments[0];
     examples.addShadow(data);
-    console.log(data.dataComponentCaller.getAttribute('class'));
 };
