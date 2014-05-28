@@ -14,7 +14,7 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
 1. Namespaced
     * HTML
 
-            <div data-component="Foo.Bar.foo" class="bar">...</div>
+            <div data-component="Foo.Bar.foo" data-component-options='{"title": "FooBar"}' class="bar">...</div>
 
     * JavaScript
 
@@ -22,6 +22,7 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
                   Bar: {
                     foo: function (componentData) {
                       var caller = componentData.dataComponentCaller;
+                      console.log(componentData.title); //=> 'fooBar'
                       return caller.getAttribute('class'); //=> 'bar'
                     };
                   }
