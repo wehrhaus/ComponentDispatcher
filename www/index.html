@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <title>Component Dispatcher</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <style>
-    .addShadow {
-        -webkit-box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
-        -moz-box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
-        box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.75);
-    }
-    </style>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
@@ -20,19 +14,25 @@
 
         <hr>
 
-        <div data-component="Examples.addClass Examples.addShadow" data-component-options='{"class": "bg-success", "classNameTextSelector": ".currentClass"}' class="col-md-12">
+        <div data-component="examples.addClass examples.addShadow" data-component-options='{"class": "bg-success", "classNameTextSelector": ".currentClass"}' class="col-md-12">
             <p>This example will trigger two calls:</p>
             <ul>
-                <li>Examples.addClass()</li>
-                <li>Examples.addShadow()</li>
+                <li>examples.addClass()</li>
+                <li>examples.addShadow()</li>
             </ul>
-            <p>Original ClassName: col-md-12</p>
-            <p>New ClassName: <span class="currentClass">col-md-12</span></p>
+        </div>
+
+        <div data-component="examples.addShadow" class="col-md-12">
+            <p>This example will trigger:</p>
+            <ul>
+                <li>examples.addShadow()</li>
+            </ul>
         </div>
 
     </div>
 
-    <script src="app.js"></script>
+    <script src="examples.js"></script>
+    <script src="ComponentDispatcher.js"></script>
 
 </body>
 </html>
