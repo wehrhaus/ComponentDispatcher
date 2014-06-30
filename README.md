@@ -9,18 +9,7 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
 
 **Example:** <a href="http:/componentdispatcher.justinwehrman.com" target="_blank">http:/componentdispatcher.justinwehrman.com</a>
 
-## ModuleDispatcher
-
-If using <a href="http://requirejs.org/" target="_blank">RequireJS</a>, **ModuleDispatcher** can be used.
-
-Uses the html `data-module` attribute to dispatch RequireJS modules.
-
-An optional `data-module-options` attribute can be used to send JSON data to the module
-
-_Assumes modules called reside in `modules/` directory_
-
-
-### Usage (ComponentDispatcher)
+## Usage (ComponentDispatcher)
 
 1. Namespaced
     * HTML
