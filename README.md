@@ -9,8 +9,15 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
 
 **Example:** <a href="http:/componentdispatcher.justinwehrman.com" target="_blank">http:/componentdispatcher.justinwehrman.com</a>
 
-## Usage (ComponentDispatcher)
+## ModuleDispatcher
 
+If using <a href="http://requirejs.org/" target="_blank">RequireJS</a>, **ModuleDispatcher** can be used.
+
+Uses the html `data-module` attribute to dispatch RequireJS modules.
+
+An optional `data-module-options` attribute can be used to send JSON data to the module
+
+### Usage (ComponentDispatcher)
 1. Namespaced
     * HTML
 
@@ -37,6 +44,7 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
             <div data-component="foo" class="bar">...</div>
 
     * JavaScript
+
             <script src="ComponentDispatcher.js"></script>
             <script>
             var foo = function () {
@@ -51,6 +59,7 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
             <div data-component="Foo.bar getClass" class="bar">...</div>
 
     * JavaScript
+
             <script src="ComponentDispatcher.js"></script>
             <script>
             var Foo = {
