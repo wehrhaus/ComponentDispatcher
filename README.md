@@ -17,7 +17,10 @@ Uses the html `data-module` attribute to dispatch RequireJS modules.
 
 An optional `data-module-options` attribute can be used to send JSON data to the module
 
-### Usage
+_Assumes modules called reside in `modules/` directory_
+
+
+### Usage (ComponentDispatcher)
 
 1. Namespaced
     * HTML
