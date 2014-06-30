@@ -9,7 +9,15 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
 
 **Example:** <a href="http:/componentdispatcher.justinwehrman.com" target="_blank">http:/componentdispatcher.justinwehrman.com</a>
 
-## Usage
+## ModuleDispatcher
+
+If using <a href="http://requirejs.org/" target="_blank">RequireJS</a>, **ModuleDispatcher** can be used.
+
+Uses the html `data-module` attribute to dispatch RequireJS modules.
+
+An optional `data-module-options` attribute can be used to send JSON data to the module
+
+### Usage
 
 1. Namespaced
     * HTML
@@ -18,15 +26,18 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
 
     * JavaScript
 
+            <script src="ComponentDispatcher.js"></script>
+            <script>
             var Foo = {
                   Bar: {
                     foo: function (componentData) {
                       var caller = componentData.dataComponentCaller;
-                      console.log(componentData.title); //=> 'fooBar'
+                      console.log(componentData.title); //=> 'FooBar'
                       return caller.getAttribute('class'); //=> 'bar'
                     };
                   }
                 };
+            </script>
 
 2. Function
     * HTML
@@ -34,11 +45,13 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
             <div data-component="foo" class="bar">...</div>
 
     * JavaScript
-
+            <script src="ComponentDispatcher.js"></script>
+            <script>
             var foo = function () {
               var data = arguments[0];
               return data.dataComponentCaller.getAttribute('class'); //=> 'bar'
             };
+            </script>
 
 3. Multiple Calls
     * HTML
@@ -46,7 +59,8 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
             <div data-component="Foo.bar getClass" class="bar">...</div>
 
     * JavaScript
-
+            <script src="ComponentDispatcher.js"></script>
+            <script>
             var Foo = {
                   bar: function (componentData) {
                     var caller = componentData.dataComponentCaller;
@@ -57,3 +71,4 @@ The DOM element that dispatched the call will always be sent as `dataComponentCa
                   var data = arguments[0];
                   return data.dataComponentCaller.getAttribute('class'); //=> 'bar'
                 };
+            </script>
