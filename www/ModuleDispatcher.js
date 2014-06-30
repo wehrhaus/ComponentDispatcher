@@ -21,7 +21,7 @@ define([], function () { 'use strict';
                 i = 0;
 
 
-            requirejs(['modules/' + module], function (module) {
+            require(['modules/' + module], function (module) {
                 var context = module;
                 for (i = 0; i <= namespace.length; i += 1) {
                     if (namespace[i] !== undefined) {
