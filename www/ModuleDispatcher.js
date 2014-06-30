@@ -1,4 +1,13 @@
 /* global requirejs */
+/*
+ *
+ * USAGE: Loops through the DOM and operates
+ *        `data-module="module.function"` or `data-module="module.namespace.function"`
+ *        Uses require() to load specified module then calls associated initialization method.
+ *        Sends `componentData` object as an argument which includes DOM caller as `componentData.dataComponentCaller`.
+ *        Sends optional `data-module-options='{"foo":"bar"}'` as additional `componentData` properties.
+*/
+
 define([], function () { 'use strict';
 
     var ModuleDispatcher = function () {
@@ -20,7 +29,6 @@ define([], function () { 'use strict';
                 nsLength = nsArray.length,
                 i = 0;
 
-
             require(['modules/' + module], function (module) {
                 var context = module;
                 for (i = 0; i <= namespace.length; i += 1) {
@@ -33,7 +41,7 @@ define([], function () { 'use strict';
                             return callback.call(context, options);
                         }
                     } catch (err) {
-                        throw new Error('ComponentDispatcher.stringToFunction - ' + err);
+                        throw new Error('ModuleDispatcher.requireMod - ' + err);
                     }
                 }
             });
