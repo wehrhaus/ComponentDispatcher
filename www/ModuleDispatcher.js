@@ -1,14 +1,15 @@
-/* global requirejs */
 /*
  *
- * USAGE: Loops through the DOM and operates
- *        `data-module="module.function"` or `data-module="module.namespace.function"`
- *        Uses require() to load specified module then calls associated initialization method.
- *        Sends `componentData` object as an argument which includes DOM caller as `componentData.dataComponentCaller`.
- *        Sends optional `data-module-options='{"foo":"bar"}'` as additional `componentData` properties.
+ * USAGE:
+ *     Loops through the DOM and operates
+ *     `data-module="module.function"` or `data-module="module.namespace.function"`
+ *     Uses require() to load specified module then calls associated initialization method.
+ *     Sends `componentData` object as an argument which includes DOM caller as `componentData.dataComponentCaller`.
+ *     Sends optional `data-module-options='{"foo":"bar"}'` as additional `componentData` properties.
 */
 
-define([], function () { 'use strict';
+define([], function () {
+    'use strict';
 
     var ModuleDispatcher = function () {
 
@@ -29,6 +30,7 @@ define([], function () { 'use strict';
                 nsLength = nsArray.length,
                 i = 0;
 
+            // if using a context for require replace `require()` with `context()`
             require(['modules/' + module], function (module) {
                 var context = module;
                 for (i = 0; i <= namespace.length; i += 1) {
@@ -56,6 +58,10 @@ define([], function () { 'use strict';
             var components = document.querySelectorAll('[data-module]'),
                 component = {}, option = {}, options = {}, o = 0, j = 0, i = 0;
 
+            /* IE8 fix for window.hasOwnProperty - set to ignore error from jshint */
+            /* jshint -W001 */
+            components.hasOwnProperty = components.hasOwnProperty || Object.prototype.hasOwnProperty;
+
             for (o in components) {
                 if (
                     components.hasOwnProperty(o) &&
@@ -74,6 +80,7 @@ define([], function () { 'use strict';
                     }
                 }
             }
+
 
             /* quick reset of variables populated within each data-module */
             function resetVars() {
