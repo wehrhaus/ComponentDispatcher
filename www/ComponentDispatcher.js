@@ -40,6 +40,10 @@ var ComponentDispatcher = function () {
         var components = document.querySelectorAll('[data-component]'),
             component = null, option = null, options = {}, o = null, j = null, i = null;
 
+        /* IE8 fix for window.hasOwnProperty - set to ignore error from jshint */
+        /* jshint -W001 */
+        components.hasOwnProperty = components.hasOwnProperty || Object.prototype.hasOwnProperty;
+
         for (o in components) {
             if (
                 components.hasOwnProperty(o) &&
