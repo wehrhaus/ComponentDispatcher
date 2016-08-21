@@ -7,7 +7,7 @@ An optional `data-component-options` attribute can be used to send JSON data to 
 The DOM element that dispatched the call will always be sent as `dataComponentCaller`
 *See the examples below for details.*
 
-**Example:** <a href="http:/componentdispatcher.justinwehrman.com" target="_blank">http:/componentdispatcher.justinwehrman.com</a>
+**Example:** <a href="http://componentdispatcher.wehr.haus" target="_blank">http://componentdispatcher.wehr.haus</a>
 
 ## ModuleDispatcher
 
